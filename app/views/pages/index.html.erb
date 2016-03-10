@@ -4,7 +4,7 @@
             background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
                 rgba(0,0,0, 0.7),
                 rgba(0,0,0, 0.7)
-                ), url("/bg.jpg") no-repeat center center fixed
+                ), url("/header2.jpg") no-repeat center center fixed
             
             ; /* only display once, center horizontal and vertical, dont let scroll change position. */
             -webkit-background-size: cover;
@@ -54,19 +54,18 @@
                 Find out what your buddies think of you. Look up other people.<br>
                 Share your thoughts about others. Have fun! <br>
             </p>
-                   <div class="btn btn-primary">
-                       Log In
-                    </div> 
-                    
-                   <div class="btn btn-primary ">
-                        Sign Up
-                   </div> 
         </div>
-
+        <div class="col-sm-6">
+            <div class="log-in panel">
+                Log In
+            </div> 
+            <div class="sign-up panel">
+                Sign Up
+            </div> 
+        </div>
         <div class="col-sm-12">
             <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads  info  Brand  Advertise  Businesses  Media  Developers  Directory © 2016 Flutter</p>
         </div>
-        
     </div>
 
 <% else # if the user IS signed in, render the following %>
