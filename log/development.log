@@ -382,3 +382,333 @@ Processing by PagesController#profile as HTML
   Rendered pages/profile.html.erb within layouts/application (0.5ms)
   Rendered layouts/_nav.html.erb (0.0ms)
 Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (17.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (6.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20160310023827)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (8.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160310023827"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 217.168.188.201 at 2016-03-10 02:39:14 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 341ms (Views: 327.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 217.168.188.201 at 2016-03-10 02:39:56 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (79.2ms)
+  Rendered layouts/_nav.html.erb (0.0ms)
+Completed 200 OK in 201ms (Views: 180.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 217.168.188.201 at 2016-03-10 02:40:42 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (80.4ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+Completed 200 OK in 402ms (Views: 362.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for 217.168.188.201 at 2016-03-10 02:40:53 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_nav.html.erb (0.1ms)
+Completed 200 OK in 111ms (Views: 110.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 217.168.188.201 at 2016-03-10 02:41:23 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nqiZ80/js5akE+OyrnYTwfh7jz7zG6+6JkGhkEbVabSKmW5iU/L0xADadSSo3yy6JLlE0j28fD6lIMUeMKEAtw==", "user"=>{"email"=>"rustam.eynaliyev@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rustam.eynaliyev@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "rustam.eynaliyev@gmail.com"], ["encrypted_password", "$2a$10$DvNwi9HZ8PCNwutA2B3pjuoiTsJZ0RJj3J.PBbOBzWCQoFXdWizS."], ["created_at", "2016-03-10 02:41:23.503010"], ["updated_at", "2016-03-10 02:41:23.503010"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-03-10 02:41:23.515586"], ["current_sign_in_at", "2016-03-10 02:41:23.515586"], ["last_sign_in_ip", "217.168.188.201"], ["current_sign_in_ip", "217.168.188.201"], ["sign_in_count", 1], ["updated_at", "2016-03-10 02:41:23.516551"], ["id", 1]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Redirected to https://yeah-eynaliyev.c9users.io/
+Completed 302 Found in 198ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/" for 217.168.188.201 at 2016-03-10 02:41:23 +0000
+Cannot render console from 217.168.188.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_nav.html.erb (0.1ms)
+Completed 200 OK in 84ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 04:56:24 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 04:56:25 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (4.6ms)
+Completed 200 OK in 179ms (Views: 177.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 04:56:45 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 04:56:45 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (3.2ms)
+Completed 200 OK in 115ms (Views: 114.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:02:20 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:02:20 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (47.0ms)
+  Rendered layouts/_nav.html.erb (49.4ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `edit_user_profile_path' for #<#<Class:0x007f44cd8ccaa8>:0x007f44ce9f3408>
+Did you mean?  edit_user_password_path):
+    32:             <li role="separator" class="divider"></li>
+    33:             <li><a href="#">Help</a></li>
+    34:             <li role="separator" class="divider"></li>
+    35:             <li><%= link_to('Edit Profile', edit_user_profile_path) %></li>
+    36:             <li role="separator" class="divider"></li>
+    37:             <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    38:           </ul>
+  app/views/layouts/_nav_user.html.erb:35:in `_app_views_layouts__nav_user_html_erb__1611109508162079869_69966740545900'
+  app/views/layouts/_nav.html.erb:4:in `_app_views_layouts__nav_html_erb___31128800629411374_69966735931620'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__338988276326436276_69966730603920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.0ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:02:41 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 58ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:02:42 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (43.2ms)
+  Rendered layouts/_nav.html.erb (46.3ms)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `edit_user_profile_path' for #<#<Class:0x007f52e05754d8>:0x007f52e0581f80>
+Did you mean?  edit_user_password_path):
+    32:             <li role="separator" class="divider"></li>
+    33:             <li><a href="#">Help</a></li>
+    34:             <li role="separator" class="divider"></li>
+    35:             <li><%= link_to('Edit Profile', edit_user_profile_path) %></li>
+    36:             <li role="separator" class="divider"></li>
+    37:             <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+    38:           </ul>
+  app/views/layouts/_nav_user.html.erb:35:in `_app_views_layouts__nav_user_html_erb__1985033747920354990_46306140'
+  app/views/layouts/_nav.html.erb:4:in `_app_views_layouts__nav_html_erb__1301129650798313064_46339200'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__190772208538429372_69996964093460'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.6ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:04:00 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:04:02 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (1.1ms)
+  Rendered layouts/_nav.html.erb (3.6ms)
+Completed 200 OK in 102ms (Views: 101.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 37.114.187.228 at 2016-03-10 05:04:09 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VqNQIPKSi0N1ax7f+yPkzKwS9MZy/hrcySzXlX/XpxBCkqex7oPMEdGiiEn9itu3cNA/KrxZyVhKTbMbCaPOEw=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to https://yeah-eynaliyev.c9users.io/
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:04:09 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_nav_guest.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (6.9ms)
+Completed 200 OK in 97ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:06:59 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (15.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (64.4ms)
+  Rendered layouts/_nav_guest.html.erb (0.1ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 147ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:07:02 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hfrZez27MZ8UZFAMHZKLPvoQOnm3tPPbBB4KJOe8Ly0SN3PsSAdR16KFLQPzSZP838Y/ok4gJxkch9a2atb/AQ==", "user"=>{"email"=>"rustam.eynaliyev@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "rustam.eynaliyev@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-03-10 05:07:03.016661"], ["current_sign_in_ip", "37.114.187.228"], ["sign_in_count", 2], ["updated_at", "2016-03-10 05:07:03.018483"], ["id", 1]]
+  [1m[35m (9.4ms)[0m  commit transaction
+Redirected to https://yeah-eynaliyev.c9users.io/
+Completed 302 Found in 148ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:07:03 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (73.3ms)
+  Rendered layouts/_nav.html.erb (77.3ms)
+Completed 200 OK in 165ms (Views: 163.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 37.114.187.228 at 2016-03-10 05:07:07 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_nav_user.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 146ms (Views: 143.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:11:46 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:11:47 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (3.8ms)
+Completed 200 OK in 192ms (Views: 190.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 37.114.187.228 at 2016-03-10 05:13:28 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to https://yeah-eynaliyev.c9users.io/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 37.114.187.228 at 2016-03-10 05:13:29 +0000
+Cannot render console from 37.114.187.228! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_nav_user.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (3.5ms)
+Completed 200 OK in 83ms (Views: 82.7ms | ActiveRecord: 0.1ms)
