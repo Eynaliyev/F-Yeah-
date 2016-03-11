@@ -21,3 +21,37 @@ body {
 .navbar {
     background-color: white;
 }
+.post-panel {
+    margin-top: -21px;
+}
+.post-title {
+    text-align: left;
+    margin-left: 15px;
+}
+.post-content {
+    text-align: left;
+    margin-left: 15px;
+}
+.post-links {
+    text-align: left;
+}
+.post-owner {
+    color: black;
+    font-weight: bold;
+}
+.post-creation {
+    opacity: 0.7;    
+}
+.g-links {
+    font-size: 120%;
+    opacity: 0.5; 
+}
+.counter {
+//    margin-right: 12.5%;
+}
+.rounded-img {
+    border-radius: 25%;
+}
+.post-form-panel {
+    margin-bottom: -21px;
+}
