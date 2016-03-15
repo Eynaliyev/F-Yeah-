@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
 
          #follow another user
          def follow(other) 
-         	active_relationships.create(followed_id: other_id)
+         	active_relationships.create(followed_id: other.id)
          end
 
          def unfollow(other)
-         	active_relationships.find_by(followed_id: other_id).destroy
+         	active_relationships.find_by(followed_id: other.id).destroy
          end
 
          def following?(other)
